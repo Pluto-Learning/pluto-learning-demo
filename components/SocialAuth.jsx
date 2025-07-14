@@ -83,7 +83,7 @@ export default function SocialAuth() {
           href={url}
         >
           {icon}
-          <span className="ms-2">Continue with {name}</span>
+          <span className="ms-2"><span className='d-none d-sm-inline'>Continue with</span> {name}</span>
         </a>
       ))}
     </div>
