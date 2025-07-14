@@ -1,0 +1,380 @@
+// @import '~mdb-ui-kit/css/mdb.min.css';
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+@font-face {
+  font-family: "Coolvetica-Rg-Regular";
+  src: url("/assets/fonts/coolvetica_rg.otf") format("opentype");
+}
+
+@import './_variables';
+@import './classes';
+@import './colors';
+@import './mixins';
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: $common-font;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $title-font;
+}
+
+.pt_50 {
+  padding-top: 50px;
+}
+
+.pb_50 {
+  padding-bottom: 50px;
+}
+
+.friend-request-btn {
+  border-radius: 8px !important;
+  padding: 10px 30px !important;
+  transition: 0.3s;
+  font-size: 14px !important;
+  text-transform: capitalize !important;
+  font-weight: normal !important;
+
+  &.dismiss {
+    background: #EBE7F6;
+    color: #3A0CA3;
+
+    &:hover {
+      background: #EBE7F6;
+      color: #3A0CA3;
+    }
+  }
+
+  &.accept {
+    background: #3A0CA3;
+    color: #EBE7F6;
+
+    &:hover {
+      background: #3A0CA3;
+      color: #fff;
+    }
+  }
+
+  &:hover {
+    box-shadow: 0 4px 9px -4px rgba(0, 0, 0, .35) !important;
+  }
+}
+
+.pluto-white-btn {
+  background-color: $pluto-white;
+  color: $pluto-black;
+  font-size: 14px;
+  font-weight: 600;
+
+  &:hover {
+    background-color: transparent;
+    color: $pluto-white;
+    border: 1px solid $pluto-white;
+  }
+}
+
+.pluto-light-gray-btn {
+  background-color: $pluto-light-gray;
+  color: $white;
+  font-size: 14px;
+  font-weight: 600;
+
+  &:hover {
+    background-color: transparent;
+    color: $pluto-light-gray;
+    border: 1px solid $pluto-light-gray;
+  }
+}
+
+.pluto-yellow-btn {
+  background-color: $pluto-yellow;
+  color: $pluto-black;
+  font-size: 14px;
+  font-weight: 600;
+
+  &:hover {
+    background-color: transparent;
+    color: $pluto-yellow;
+    border: 1px solid $pluto-yellow;
+  }
+}
+
+.pluto-pink-btn {
+  background-color: $pluto-pink;
+  color: $white;
+  font-size: 14px;
+  font-weight: 600;
+
+  &:hover {
+    background-color: transparent;
+    color: $pluto-pink;
+    border: 1px solid $pluto-pink;
+  }
+}
+
+.pluto-purple-btn {
+  background-color: $pluto-purple;
+  color: $white;
+  font-size: 14px;
+  font-weight: 600;
+
+  &:hover {
+    background-color: transparent;
+    color: $pluto-purple;
+    border: 1px solid $pluto-purple;
+  }
+}
+
+.pluto-purple-light-btn {
+  background-color: $pluto-purple-light;
+  color: $white;
+  font-size: 14px;
+  font-weight: 600;
+
+  &:hover {
+    background-color: transparent;
+    color: $pluto-purple-light;
+    border: 1px solid $pluto-purple-light;
+  }
+}
+
+.pluto-blue-btn {
+  background-color: $pluto-blue;
+  color: $white;
+  font-size: 14px;
+  font-weight: 600;
+
+  &:hover {
+    background-color: transparent;
+    color: $pluto-blue;
+    border: 1px solid $pluto-blue;
+  }
+}
+
+.pluto-deep-blue-btn {
+  background-color: $pluto-deep-blue;
+  color: $white;
+  font-size: 14px;
+  font-weight: 600;
+
+  &:hover {
+    background-color: transparent;
+    color: $pluto-deep-blue;
+    border: 1px solid $pluto-deep-blue;
+  }
+}
+
+.pluto-dark-blue-btn {
+  background-color: $pluto-dark-blue;
+  color: $white;
+  font-size: 14px;
+  font-weight: 600;
+
+  &:hover {
+    background-color: transparent;
+    color: $pluto-dark-blue;
+    border: 1px solid $pluto-dark-blue;
+  }
+}
+
+
+.google-login-btn {
+  font-weight: 600;
+  border: 1px solid $pluto-white-2;
+  border-radius: 4px;
+  background: $white !important;
+  color: $pluto-gray !important;
+  cursor: pointer;
+  width: 100%;
+  padding: 10px 15px !important;
+  font-size: 16px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  &:hover {
+    border: 1px solid $pluto-white-2;
+  }
+
+  &:active {
+    border-color: $pluto-white-2 !important;
+  }
+  // box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  // svg {
+  //   margin-right: auto;
+  // }
+
+  // span {
+  //   display: block;
+  // }
+}
+
+@media screen and (min-width: 1400px) {
+  .container {
+    max-width: 1700px;
+  }
+}
+
+@keyframes moverAnimation {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-20px);
+  }
+}
+
+
+// Preloader
+/* HTML: <div class="loader"></div> */
+
+.preloader {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .loader {
+    width: calc(100px - 24px);
+    height: 50px;
+    position: relative;
+    animation: flippx 2s infinite linear;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      margin: auto;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: $pluto-pink;
+      transform-origin: -50px 50%;
+      animation: spin 1s infinite linear;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      background: $pluto-pink;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+    }
+
+    @keyframes flippx {
+
+      0%,
+      49% {
+        transform: scaleX(1);
+      }
+
+      50%,
+      100% {
+        transform: scaleX(-1);
+      }
+    }
+
+    @keyframes spin {
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  }
+
+  .lottie-loader {
+    max-width: 500px;
+  }
+
+
+}
+
+
+
+/* HTML: <div class="loader"></div> */
+.voice-call-loader {
+  width: 50px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 8px solid #514b82;
+  animation:
+    l20-1 0.8s infinite linear alternate,
+    l20-2 1.6s infinite linear;
+}
+
+@keyframes l20-1 {
+  0% {
+    clip-path: polygon(50% 50%, 0 0, 50% 0%, 50% 0%, 50% 0%, 50% 0%, 50% 0%)
+  }
+
+  12.5% {
+    clip-path: polygon(50% 50%, 0 0, 50% 0%, 100% 0%, 100% 0%, 100% 0%, 100% 0%)
+  }
+
+  25% {
+    clip-path: polygon(50% 50%, 0 0, 50% 0%, 100% 0%, 100% 100%, 100% 100%, 100% 100%)
+  }
+
+  50% {
+    clip-path: polygon(50% 50%, 0 0, 50% 0%, 100% 0%, 100% 100%, 50% 100%, 0% 100%)
+  }
+
+  62.5% {
+    clip-path: polygon(50% 50%, 100% 0, 100% 0%, 100% 0%, 100% 100%, 50% 100%, 0% 100%)
+  }
+
+  75% {
+    clip-path: polygon(50% 50%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 50% 100%, 0% 100%)
+  }
+
+  100% {
+    clip-path: polygon(50% 50%, 50% 100%, 50% 100%, 50% 100%, 50% 100%, 50% 100%, 0% 100%)
+  }
+}
+
+@keyframes l20-2 {
+  0% {
+    transform: scaleY(1) rotate(0deg)
+  }
+
+  49.99% {
+    transform: scaleY(1) rotate(135deg)
+  }
+
+  50% {
+    transform: scaleY(-1) rotate(0deg)
+  }
+
+  100% {
+    transform: scaleY(-1) rotate(-135deg)
+  }
+}

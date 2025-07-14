@@ -1,0 +1,27 @@
+@mixin input-control {
+    border: 0;
+    color: #c7c8ca;
+    font-weight: 500;
+    letter-spacing: 0.93px;
+    white-space: nowrap;
+    height: 3rem;
+    width: 100% !important;
+    border-left: 6px solid;
+    border-radius: 8px;
+}
+
+@mixin login-input-control {
+    border: 0;
+    color: #434241;
+    // font-family: var(--font-family-nunito);
+    // font-size: var(--font-size-xl);
+    font-weight: 500;
+    letter-spacing: 0.93px;
+    // padding: 0;
+    white-space: nowrap;
+    // min-width: 20rem;
+    height: 3rem;
+    width: 100% !important;
+    background-color: #F7F7F7;
+    border-left: 4px solid #4361ee;
+}
