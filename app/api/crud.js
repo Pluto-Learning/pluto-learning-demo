@@ -739,7 +739,7 @@ export const updateTableLastTime = async (id, token) => {
     // toast.success('Table Time Updated successfully');
     return response;
   } catch (error) {
-    toast.error('Error updating table time status.');
+    // toast.error('Error updating table time status.');
     console.log(error);
     throw error;
   }

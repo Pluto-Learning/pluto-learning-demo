@@ -67,7 +67,10 @@ export default function StepTwo({ updateAllTableDetails, setCurrentStep }) {
                 `${process.env.NEXT_PUBLIC_API_URL}/Table/UpdateTablePicture/${latestAddedTable.roomId}`,
                 formData,
                 {
-                    headers: { 'Content-Type': 'multipart/form-data' },
+                    headers: { 
+                        'Content-Type': 'multipart/form-data',
+                        Authorization: `Bearer ${session?.user?.token}`, 
+                    },
                 }
             );
 

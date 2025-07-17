@@ -36,6 +36,8 @@ export default function JoinATablePopup({ tableData = {} }) {
         description4
     } = tableData;
 
+    console.log('tableData: ', tableData)
+
     const [formData, setFormData] = useState({
         memberId: '',
         roomId: '',

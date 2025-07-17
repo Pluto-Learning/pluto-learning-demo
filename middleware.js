@@ -7,9 +7,10 @@ export default auth(async (req) => {
   const pathname = nextUrl.pathname;
 
   const userId = req.auth?.user?.id;
-  const token = req.auth?.token;
+  const token = req.auth?.user?.token;
   const userType = req.auth?.user?.userType?.toLowerCase();
 
+  console.log("req.auth full:", req.auth?.user);
   console.log("Middleware check:");
   console.log("userId:", userId);
   console.log("token:", token);
@@ -42,10 +43,17 @@ export default auth(async (req) => {
     const segments = pathname.split("/");
     const roomId = segments[segments.length - 1] || segments[segments.length - 2];
 
+    // console.log('Middleware: ', { segments }, { roomId })
+
     if (roomId) {
-      console.log("Checking virtual table for ID:", roomId);
+      // console.log("Checking virtual table for ID:", {roomId});
       try {
+        console.warn("Table Data Calling Start.....")
         const data = await fetchTableById(roomId, token);
+        console.warn("Table Data Calling Stop......")
+
+        // console.log("Middleware Table Data: ",{data})
+
         if (!data) {
           console.log("Invalid table, redirecting");
           return NextResponse.redirect(new URL("/table-discovery/invalid-table", req.url));
@@ -56,6 +64,7 @@ export default auth(async (req) => {
       }
     }
   }
+
 
   return NextResponse.next();
 });

@@ -5,6 +5,7 @@ import { fetchAllTable, fetchTableById } from '@/app/api/crud';
 import { toast } from 'react-toastify';
 import { useRouter } from 'next/navigation';
 import HomeLayout from '@/layouts/homeLayout/HomeLayout';
+import { useSession } from 'next-auth/react';
 
 export default function EditTablePicture({ tableData, updateAllTableDetails }) {
 
@@ -32,7 +33,7 @@ export default function EditTablePicture({ tableData, updateAllTableDetails }) {
 
     console.log('tableData edit profile picture: ', tableData)
 
-
+    const { data: session } = useSession();
     const router = useRouter();
     const [tableImage, setTableImage] = useState(null);
     const [preview, setPreview] = useState(null); // For image preview
@@ -76,7 +77,10 @@ export default function EditTablePicture({ tableData, updateAllTableDetails }) {
                 `${process.env.NEXT_PUBLIC_API_URL}/Table/UpdateTablePicture/${roomId}`,
                 formData,
                 {
-                    headers: { 'Content-Type': 'multipart/form-data' },
+                    headers: { 
+                        'Content-Type': 'multipart/form-data',
+                        Authorization: `Bearer ${session?.user?.token}`, // ✅ Add token here
+                     },
                 }
             );
             // Handle success, maybe go to next step or show success message
